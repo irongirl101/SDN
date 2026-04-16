@@ -58,6 +58,16 @@ sudo ovs-ofctl dump-flows s1
 ## Expected output
 
 ### Network Behaviour Observation
+<include image1> 
+
+### Normal vs Leaned Forwarding 
+<include image2> 
+
+### Allowed vs Blocked Traffic
+<include image3> 
+  
+### Validation using iperf 
+<include image4> 
 
 
 
