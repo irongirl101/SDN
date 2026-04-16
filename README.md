@@ -1,5 +1,5 @@
 # Documentation
-CN Mini Project using SDN
+CN Mini Project using SDN - CN orange
 
 ## Problem Statement 
 Implement a controller that mimics a learning switch by dynamically learning MAC addresses and installing forwarding rules. 
@@ -58,6 +58,16 @@ sudo ovs-ofctl dump-flows s1
 ## Expected output
 
 ### Network Behaviour Observation
+![image 1](images/image1.png)
+
+### Normal vs Leaned Forwarding 
+![image 2](images/image2.png)
+
+### Allowed vs Blocked Traffic
+![image 3](images/image3.png)
+  
+### Validation using iperf 
+![image 4](images/image4.png)
 
 
 
