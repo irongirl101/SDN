@@ -56,3 +56,8 @@ sudo ovs-ofctl dump-flows s1
 ```
 
 ## Expected output
+
+### Network Behaviour Observation
+
+
+
