@@ -4,6 +4,7 @@ from ryu.controller.handler import CONFIG_DISPATCHER,MAIN_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.ofproto import ofproto_v1_3
 from ryu.lib.packet import packet,ethernet
+from ryu.lib.packet import ipv4
 
 class SimpleLearningSwitch(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
@@ -47,6 +48,10 @@ class SimpleLearningSwitch(app_manager.RyuApp):
         dst = eth.dst
         src = eth.src
         if eth.ethertype == 0x88cc:
+             return
+        ip = pkt.get_protocol(ipv4.ipv4)
+        if ip and ip.src == "10.0.0.1" and ip.dst == "10.0.0.2":
+             self.logger.info("Blocking IP traffic h1 -> h2")
              return
 
         dpid = datapath.id
